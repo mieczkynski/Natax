@@ -22,7 +22,7 @@ DEPS = include/*.h
 PHONY = clean
 
 #compile C src files
-%.o: %.c
+%.o: %.c $(DEPS) 
 	$(Q)$(PRINT) '\t CC \t $@'
 	$(Q)$(CC) $(CFLAGS) $< -o  $@
 #assembly (GNU AS)
@@ -35,7 +35,7 @@ PHONY = clean
 	$(Q)nasm -f elf -o $@ $<
 all: kernel.bin
 #link kernel
-kernel.bin: $(OBJ) $(DEPS) linker.ld
+kernel.bin: $(OBJ) linker.ld
 	$(Q)$(PRINT) '\t LD \t $@'
 	$(Q)ld -melf_i386 -T linker.ld -o ./kernel.bin $(OBJ)
 clean:
