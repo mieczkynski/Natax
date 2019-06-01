@@ -23,6 +23,6 @@ void gdt_init();
 
 static void gdt_set_desc(gdt_descr_t* descr, u32int base, u32int limit, u8int access, u8int granularity);
 
-extern void gdt_set(gdt_ptr_t* gdt_ptr);
+static void gdt_set(gdt_ptr_t* gdt_ptr);
 
 #endif
