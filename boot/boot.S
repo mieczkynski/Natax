@@ -1,3 +1,4 @@
+/** Here we start **/
 .global loader				# set visible to linker
 .extern main				# main from main.c
 
