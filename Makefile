@@ -22,7 +22,6 @@ DEPS = include/*.h
 PHONY = clean
 
 #compile C src files
-<<<<<<< HEAD
 %.o: %.c  $(DEPS) 
 	$(Q)$(PRINT) '\t CC \t $@'
 	$(Q)$(CC) $(CFLAGS) $< -o  $@
